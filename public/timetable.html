@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable - University Timetable System</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/fontawesome-all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/college.png" alt="University Logo">
+            <h1>University Timetable Management</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html" id="dashboard-link">Dashboard</a></li>
+                <li><a href="faculty.html" id="faculty-link">Faculty</a></li>
+                <li><a href="subjects.html" id="subjects-link">Subjects</a></li>
+                <li><a href="timetable.html" class="active" id="timetable-link">Timetable</a></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <img src="images/avatar.png" alt="User Avatar" class="avatar">
+            <span id="user-name">Admin</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="timetable-container">
+            <div class="section-header">
+                <h2>Timetable</h2>
+                <div class="timetable-actions">
+                    <button id="generate-timetable" class="btn-primary">
+                        <img src="images/ic_generate.png" alt="Generate">
+                        Generate
+                    </button>
+                    <button id="download-pdf" class="btn-secondary">
+                        <i class="fas fa-file-pdf"></i>
+                        Export PDF
+                    </button>
+                    <button id="download-excel" class="btn-secondary">
+                        <i class="fas fa-file-excel"></i>
+                        Export Excel
+                    </button>
+                </div>
+            </div>
+            
+            <div class="timetable-filters">
+                <div class="filter-group">
+                    <label for="department-select">Department:</label>
+                    <select id="department-select">
+                        <option value="">All Departments</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Physics">Physics</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="semester-select">Semester:</label>
+                    <select id="semester-select">
+                        <option value="">All Semesters</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="section-select">Section:</label>
+                    <select id="section-select">
+                        <option value="">All Sections</option>
+                        <option value="A">Section A</option>
+                        <option value="B">Section B</option>
+                        <option value="C">Section C</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="timetable-view">
+                <div class="timetable-tabs">
+                    <button class="tab-btn active" data-view="class">Class View</button>
+                    <button class="tab-btn" data-view="faculty">Faculty View</button>
+                    <button class="tab-btn" data-view="room">Room View</button>
+                </div>
+                
+                <div class="timetable-grid" id="timetable-grid">
+                    <!-- Timetable will be rendered here via JavaScript -->
+                    <div class="loading-indicator">
+                        <p>Select filters and click Generate to create a timetable</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conflict Resolution Modal -->
+        <div id="conflict-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Resolve Conflicts</h3>
+                
+                <div class="conflicts-list">
+                    <!-- Conflicts will be listed here -->
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" id="auto-resolve" class="btn-primary">Auto Resolve</button>
+                    <button type="button" id="close-conflicts" class="btn-secondary">Close</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 University Timetable Management System</p>
+    </footer>
+
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/timetable.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "vijay-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express-csrf": "^0.3.4",
+    "express-csurf": "^1.10.1",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.13.2"
+  }
+}

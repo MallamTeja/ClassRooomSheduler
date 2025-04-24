@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Management - University Timetable System</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/fontawesome-all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/college.png" alt="University Logo">
+            <h1>University Timetable Management</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html" id="dashboard-link">Dashboard</a></li>
+                <li><a href="faculty.html" class="active" id="faculty-link">Faculty</a></li>
+                <li><a href="subjects.html" id="subjects-link">Subjects</a></li>
+                <li><a href="timetable.html" id="timetable-link">Timetable</a></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <img src="images/avatar.png" alt="User Avatar" class="avatar">
+            <span id="user-name">Admin</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="faculty-container">
+            <div class="section-header">
+                <h2>Faculty Management</h2>
+                <button id="add-faculty" class="btn-primary">
+                    <img src="images/plus.png" alt="Add">
+                    Add Faculty
+                </button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="faculty-search" placeholder="Search faculty...">
+                <select id="department-filter">
+                    <option value="">All Departments</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                </select>
+            </div>
+            
+            <table class="data-table" id="faculty-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Subjects</th>
+                        <th>Available Hours</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="faculty-table-body">
+                    <!-- Faculty data will be loaded here via JavaScript -->
+                </tbody>
+            </table>
+            
+            <div id="pagination" class="pagination">
+                <!-- Pagination controls will be added here via JavaScript -->
+            </div>
+        </section>
+        
+        <!-- Add/Edit Faculty Modal -->
+        <div id="faculty-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3 id="modal-title">Add New Faculty</h3>
+                
+                <form id="faculty-form">
+                    <input type="hidden" id="faculty-id">
+                    
+                    <div class="form-group">
+                        <label for="faculty-name">Full Name</label>
+                        <input type="text" id="faculty-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="faculty-email">Email</label>
+                        <input type="email" id="faculty-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="faculty-department">Department</label>
+                        <select id="faculty-department" required>
+                            <option value="">Select Department</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Physics">Physics</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Subjects</label>
+                        <div id="subject-checkboxes" class="checkbox-group">
+                            <!-- Subject checkboxes will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Available Hours</label>
+                        <div class="time-slots">
+                            <!-- Time slot selection will be dynamically generated -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="cancel-faculty" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 University Timetable Management System</p>
+    </footer>
+
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/faculty.js"></script>
+</body>
+</html>

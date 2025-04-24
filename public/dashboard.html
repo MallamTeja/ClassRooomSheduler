@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Timetable Management System</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/fontawesome-all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/college.png" alt="University Logo">
+            <h1>University Timetable Management</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active" id="dashboard-link">Dashboard</a></li>
+                <li><a href="#" id="faculty-link">Faculty</a></li>
+                <li><a href="#" id="subjects-link">Subjects</a></li>
+                <li><a href="#" id="timetable-link">Timetable</a></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <img src="images/avatar.png" alt="User Avatar" class="avatar">
+            <span id="user-name">Admin</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-container">
+            <h2>Dashboard</h2>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/ic_classroom.png" alt="Classrooms">
+                    </div>
+                    <div class="stat-info">
+                        <h3>Classrooms</h3>
+                        <p id="classroom-count">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/courseIcon.png" alt="Courses">
+                    </div>
+                    <div class="stat-info">
+                        <h3>Courses</h3>
+                        <p id="course-count">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/ic_semister.png" alt="Semesters">
+                    </div>
+                    <div class="stat-info">
+                        <h3>Semesters</h3>
+                        <p id="semester-count">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/user.png" alt="Faculty">
+                    </div>
+                    <div class="stat-info">
+                        <h3>Faculty</h3>
+                        <p id="faculty-count">0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="actions-container">
+                <button id="generate-timetable" class="action-btn">
+                    <img src="images/ic_generate.png" alt="Generate">
+                    Generate Timetable
+                </button>
+                <button id="enforce-constraints" class="action-btn">
+                    <img src="images/ic_enforce.png" alt="Enforce">
+                    Enforce Constraints
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 University Timetable Management System</p>
+    </footer>
+
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/dashboard.js"></script>
+</body>
+</html>

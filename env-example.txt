@@ -1,0 +1,10 @@
+# Example environment variables for Automated-University-TimeTable-Management-System
+
+# MongoDB connection string
+DATABASE_URL=mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority&appName=ClassRoomSchedulerDB
+
+# Secret key for sessions or other uses
+SECRET_KEY=your_secret_key_here
+
+# Web domain or host
+WEB_DOMAIN=localhost
